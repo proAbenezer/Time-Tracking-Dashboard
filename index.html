@@ -243,20 +243,16 @@
         </div> -->
       </div>
     </div>
-    <!--  <template id="cards-template">
+    <template id="cards-template">
       <div class="flex flex-col rounded-lg">
         <div
-          class="relative w-full h-12 bg-LightRedWork rounded-t-xl overflow-hidden xl:h-14"
+          id="banner"
+          class="relative w-full h-12 rounded-t-xl overflow-hidden xl:h-14"
         >
-          <img
-            id="card-image"
-            src="./images/icon-work.svg"
-            alt=""
-            class="absolute -top-[20%] right-1"
-          />
+          <img id="card-image" alt="" class="absolute -top-[20%] right-1" />
         </div>
         <div
-          class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+          class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-6 xl:gap-x-0 xl:gap-y-8"
         >
           <div class="flex justify-between items-center">
             <h1 id="title" class="font-bold text-white text-[18px]">Work</h1>
@@ -269,16 +265,19 @@
           <div
             class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
           >
-            <h1 class="font-extralight text-white text-3xl xl:text-5xl">
-              <span id="current-hour">32</span>hrs
+            <h1
+              id="current-hour"
+              class="font-extralight text-white text-3xl xl:text-5xl"
+            >
+              32hrs
             </h1>
 
-            <p class="text-white text-xs opacity-[75%]">
-              Last week - <span id="previous-hour">8</span>hrs
+            <p id="previous-hour" class="text-white text-xs opacity-[75%]">
+              Last week - 8hrs
             </p>
           </div>
         </div>
       </div>
-    </template> -->
+    </template>
   </body>
 </html>
