@@ -6,15 +6,23 @@
     <title>Time tracking dashboard</title>
     <link rel="stylesheet" href="./main/output.css" />
     <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <div class="w-full min-h-screen bg-VeryDarkBlue flex xl:items-center">
+  <body class="font-rubik">
+    <div
+      class="w-full min-h-screen bg-VeryDarkBlue flex xl:justify-center xl:items-center"
+    >
       <div
         id="cards-container"
-        class="max-w-sm mx-auto grid grid-cols-1 gap-6 px-6 py-8 md:min-w-[80%] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        class="w-full mx-auto grid grid-cols-1 gap-6 px-6 py-8 md:min-w-[80%] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         <div
-          class="flex flex-col rounded-xl bg-DarkBlue xl:w-[14rem] xl:ml-auto xl:row-span-2"
+          class="w-full flex flex-col rounded-xl bg-DarkBlue xl:w-[14rem] xl:ml-auto xl:row-span-2"
         >
           <div
             class="w-full flex-2 flex items-center bg-Blue gap-x-3 p-6 rounded-xl xl:flex-col xl:items-start xl:gap-x-0 xl:space-y-8 xl:h-[80%]"
@@ -28,24 +36,31 @@
                 class="w-full h-full"
               />
             </div>
-            <div class="flex flex-col">
-              <p class="text-white text-xs opacity-[75%] w-sm">Report for</p>
+            <div class="flex flex-col gap-y-2">
+              <p class="text-white text-md opacity-[75%] w-sm">Report for</p>
               <h4
-                class="font-bold text-white text-[18px] xl:max-w-10 xl:font-light xl:text-4xl"
+                class="font-[600] text-white text-[18px] xl:max-w-10 xl:font-light xl:text-4xl"
               >
                 Jeremy Robson
               </h4>
             </div>
           </div>
           <div
+            id="user-links"
             class="flex px-6 py-5 justify-between xl:flex-col xl:gap-y-4 xl:py-4"
           >
-            <h1 class="text-white text-[14px] opacity-[75%]">Daily</h1>
-            <h1 class="text-white text-[14px]">Weekly</h1>
-            <h1 class="text-white text-[14px] opacity-[75%]">Monthly</h1>
+            <h1 id="daily-link" class="text-white text-[14px] opacity-[75%]">
+              Daily
+            </h1>
+            <h1 id="weekly-link" class="text-white text-[14px] opacity-[75%]">
+              Weekly
+            </h1>
+            <h1 id="monthly-link" class="text-white text-[14px] opacity-[75%]">
+              Monthly
+            </h1>
           </div>
         </div>
-        <!--         <div class="flex flex-col rounded-lg">
+        <div class="card flex flex-col rounded-lg">
           <div
             class="relative w-full h-12 bg-LightRedWork rounded-t-xl overflow-hidden xl:h-14"
           >
@@ -56,9 +71,9 @@
             />
           </div>
           <div
-            class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+            class="relative overflow-hidden bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8 md:flex-1 md:gap-y-12"
           >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center z-10">
               <h1 class="font-bold text-white text-[18px]">Work</h1>
               <img
                 src="./images/icon-ellipsis.svg"
@@ -67,18 +82,23 @@
               />
             </div>
             <div
-              class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
+              class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1 z-10"
             >
-              <h1 class="font-extralight text-white text-3xl xl:text-5xl">
+              <h1
+                class="font-extralight text-white text-4xl md:text-5xl xl:text-6xl"
+              >
                 <span id="current-hour">32</span>hrs
               </h1>
               <p class="text-white text-xs opacity-[75%]">
-                Last week - <span id="previous-hour">8</span>hrs
+                Last<span id="previous-hour"> week - 8</span>hrs
               </p>
             </div>
+            <div
+              class="card-shadow absolute top-0 left-0 right-0 bottom-0 bg-white opacity-[20%] translate-y-[2000px]"
+            ></div>
           </div>
         </div>
-        <div class="flex flex-col rounded-lg">
+        <div class="card flex flex-col rounded-lg">
           <div
             class="relative w-full h-12 bg-SoftBlue rounded-t-xl overflow-hidden xl:h-14"
           >
@@ -89,9 +109,9 @@
             />
           </div>
           <div
-            class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+            class="relative overflow-hidden bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8 md:flex-1 md:gap-y-12"
           >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center z-10">
               <h1 class="font-bold text-white text-[18px]">Play</h1>
               <img
                 src="./images/icon-ellipsis.svg"
@@ -100,18 +120,23 @@
               />
             </div>
             <div
-              class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
+              class="relative overflow-hidden flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
             >
-              <h1 class="font-extralight text-white text-3xl xl:text-5xl">
+              <h1
+                class="font-extralight text-white text-4xl md:text-5xl xl:text-6xl z-index"
+              >
                 <span id="current-hour">32</span>hrs
               </h1>
               <p class="text-white text-xs opacity-[75%]">
-                Last week - <span id="previous-hour">8</span>hrs
+                Last<span id="previous-hour"> week - 8</span>hrs
               </p>
             </div>
+            <div
+              class="card-shadow absolute top-0 left-0 right-0 bottom-0 bg-white opacity-[20%] translate-y-[2000px]"
+            ></div>
           </div>
         </div>
-        <div class="flex flex-col rounded-lg">
+        <div class="card flex flex-col rounded-lg">
           <div
             class="relative w-full h-12 bg-LightRedStudy rounded-t-xl overflow-hidden xl:h-14"
           >
@@ -122,9 +147,9 @@
             />
           </div>
           <div
-            class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+            class="relative overflow-hidden bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8 md:flex-1 md:gap-y-12"
           >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center z-10">
               <h1 class="font-bold text-white text-[18px]">Study</h1>
               <img
                 src="./images/icon-ellipsis.svg"
@@ -135,16 +160,23 @@
             <div
               class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
             >
-              <h1 class="font-extralight text-white text-3xl xl:text-5xl">
-                32hrs
+              <h1
+                class="font-extralight text-white text-4xl md:text-5xl xl:text-6xl z-10"
+              >
+                <span id="current-hour">32</span>hrs
               </h1>
-              <p class="text-white text-xs opacity-[75%]">Last week - 8hrs</p>
+              <p class="text-white text-xs opacity-[75%]">
+                Last<span id="previous-hour"> week - 8</span>hrs
+              </p>
             </div>
+            <div
+              class="card-shadow absolute top-0 left-0 right-0 bottom-0 bg-white opacity-[20%] translate-y-[2000px]"
+            ></div>
           </div>
         </div>
-        <div class="flex flex-col rounded-lg">
+        <div class="card flex flex-col rounded-lg">
           <div
-            class="relative w-full h-12 bg-LimeGreen rounded-t-xl overflow-hidden xl:h-14"
+            class="relative w-full h-12 bg-LimeGreen rounded-t-xl overflow-hidden xl:h-14 z-10"
           >
             <img
               src="./images/icon-exercise.svg"
@@ -153,9 +185,9 @@
             />
           </div>
           <div
-            class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+            class="relative overflow-hidden bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8 md:flex-1 md:gap-y-12"
           >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center z-10">
               <h1 class="font-bold text-white text-[18px]">Exercise</h1>
               <img
                 src="./images/icon-ellipsis.svg"
@@ -166,18 +198,23 @@
             <div
               class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
             >
-              <h1 class="font-extralight text-white text-3xl xl:text-5xl">
+              <h1
+                class="font-extralight text-white text-4xl md:text-5xl xl:text-6xl"
+              >
                 <span id="current-hour">32</span>hrs
               </h1>
               <p class="text-white text-xs opacity-[75%]">
-                Last week - <span id="previous-hour">8</span>hrs
+                Last<span id="previous-hour"> week - 8</span>hrs
               </p>
             </div>
+            <div
+              class="card-shadow absolute top-0 left-0 right-0 bottom-0 bg-white opacity-[20%] translate-y-[2000px]"
+            ></div>
           </div>
         </div>
-        <div class="flex flex-col rounded-lg">
+        <div class="card flex flex-col rounded-lg">
           <div
-            class="relative w-full h-12 bg-Viole rounded-t-xl overflow-hidden xl:h-14"
+            class="relative w-full h-12 bg-Viole rounded-t-xl overflow-hidden xl:h-14 z-10"
           >
             <img
               src="./images/icon-social.svg"
@@ -186,9 +223,9 @@
             />
           </div>
           <div
-            class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+            class="relative overflow-hidden bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8 md:flex-1 md:gap-y-12"
           >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center z-10">
               <h1 class="font-bold text-white text-[18px]">Social</h1>
               <img
                 src="./images/icon-ellipsis.svg"
@@ -199,18 +236,23 @@
             <div
               class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
             >
-              <h1 class="font-extralight text-white text-3xl xl:text-5xl">
+              <h1
+                class="font-extralight text-white text-4xl md:text-5xl xl:text-6xl"
+              >
                 <span id="current-hour">32</span>hrs
               </h1>
               <p class="text-white text-xs opacity-[75%]">
-                Last week - <span id="previous-hour">8</span>hrs
+                Last<span id="previous-hour"> week - 8</span>hrs
               </p>
             </div>
+            <div
+              class="card-shadow absolute top-0 left-0 right-0 bottom-0 bg-white opacity-[20%] translate-y-[2000px]"
+            ></div>
           </div>
         </div>
-        <div class="flex flex-col rounded-lg">
+        <div class="card flex flex-col rounded-lg">
           <div
-            class="relative w-full h-12 bg-SoftOrange rounded-t-xl overflow-hidden xl:h-14"
+            class="relative w-full h-12 bg-SoftOrange rounded-t-xl overflow-hidden xl:h-14 z-10"
           >
             <img
               src="./images/icon-self-care.svg"
@@ -219,9 +261,9 @@
             />
           </div>
           <div
-            class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8"
+            class="relative overflow-hidden bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-x-2 xl:gap-x-0 xl:gap-y-8 md:flex-1 md:gap-y-12"
           >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center z-10">
               <h1 class="font-bold text-white text-[18px]">Self Care</h1>
               <img
                 src="./images/icon-ellipsis.svg"
@@ -232,52 +274,21 @@
             <div
               class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
             >
-              <h1 class="font-extralight text-white text-3xl xl:text-5xl">
+              <h1
+                class="font-extralight text-white text-4xl md:text-5xl xl:text-6xl"
+              >
                 <span id="current-hour">32</span>hrs
               </h1>
               <p class="text-white text-xs opacity-[75%]">
-                Last week - <span id="previous-hour">8</span>hrs
+                Last<span id="previous-hour"> week - 8</span>hrs
               </p>
             </div>
+            <div
+              class="card-shadow absolute top-0 left-0 right-0 bottom-0 bg-white opacity-[20%] translate-y-[2000px]"
+            ></div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
-    <template id="cards-template">
-      <div class="flex flex-col rounded-lg">
-        <div
-          id="banner"
-          class="relative w-full h-12 rounded-t-xl overflow-hidden xl:h-14"
-        >
-          <img id="card-image" alt="" class="absolute -top-[20%] right-1" />
-        </div>
-        <div
-          class="bg-DarkBlue w-full p-6 rounded-b rounded-t-xl -mt-4 z-10 flex flex-col gap-6 xl:gap-x-0 xl:gap-y-8"
-        >
-          <div class="flex justify-between items-center">
-            <h1 id="title" class="font-bold text-white text-[18px]">Work</h1>
-            <img
-              src="./images/icon-ellipsis.svg"
-              alt=""
-              class="w-[16px] h-[4px] cursor-pointer"
-            />
-          </div>
-          <div
-            class="flex justify-between items-center xl:flex-col xl:items-start xl:gap-y-1"
-          >
-            <h1
-              id="current-hour"
-              class="font-extralight text-white text-3xl xl:text-5xl"
-            >
-              32hrs
-            </h1>
-
-            <p id="previous-hour" class="text-white text-xs opacity-[75%]">
-              Last week - 8hrs
-            </p>
-          </div>
-        </div>
-      </div>
-    </template>
   </body>
 </html>

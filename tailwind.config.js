@@ -10,6 +10,9 @@ module.exports = {
     },
 
     extend: {
+      fontFamily: {
+        rubik: ["Rubik", "sans-serif"],
+      },
       colors: {
         Blue: " hsl(246, 80%, 60%)",
         LightRedWork: " hsl(15, 100%, 70%)",

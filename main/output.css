@@ -566,16 +566,28 @@ video {
   top: -20%;
 }
 
+.-top-\[35\%\] {
+  top: -35%;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
 .right-1 {
   right: 0.25rem;
 }
 
-.-top-\[30\%\] {
-  top: -30%;
-}
-
-.-top-\[35\%\] {
-  top: -35%;
+.top-0 {
+  top: 0px;
 }
 
 .z-10 {
@@ -631,8 +643,9 @@ video {
   width: 100%;
 }
 
-.max-w-sm {
-  max-width: 24rem;
+.translate-y-\[2000px\] {
+  --tw-translate-y: 2000px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -667,6 +680,10 @@ video {
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 
 .overflow-hidden {
@@ -734,6 +751,11 @@ video {
   background-color: hsl(195 74% 62% / var(--tw-bg-opacity, 1));
 }
 
+.bg-SoftOrange {
+  --tw-bg-opacity: 1;
+  background-color: hsl(43 84% 65% / var(--tw-bg-opacity, 1));
+}
+
 .bg-VeryDarkBlue {
   --tw-bg-opacity: 1;
   background-color: hsl(226 43% 10% / var(--tw-bg-opacity, 1));
@@ -744,9 +766,9 @@ video {
   background-color: hsl(264 64% 52% / var(--tw-bg-opacity, 1));
 }
 
-.bg-SoftOrange {
+.bg-white {
   --tw-bg-opacity: 1;
-  background-color: hsl(43 84% 65% / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .p-6 {
@@ -768,9 +790,13 @@ video {
   padding-bottom: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.font-rubik {
+  font-family: Rubik, sans-serif;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-\[14px\] {
@@ -786,6 +812,10 @@ video {
   line-height: 1rem;
 }
 
+.font-\[600\] {
+  font-weight: 600;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -799,8 +829,40 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.opacity-\[20\%\] {
+  opacity: 20%;
+}
+
 .opacity-\[75\%\] {
   opacity: 75%;
+}
+
+* {
+  font-family: "Rubik", serif;
+  transition: all 0.5s;
+}
+
+.card {
+  transition: all 0.7s;
+}
+
+.card:hover .card-shadow {
+  transform: translateY(0);
+}
+
+#daily-link,
+#weekly-link,
+#montly {
+  cursor: pointer;
+}
+
+@media (min-width: 1440px) {
+  /* xl: */
+
+  #cards-container {
+    grid-template-columns: repeat(1, 1fr 2fr 2fr 2fr);
+    padding-inline: 6rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -808,8 +870,21 @@ video {
     min-width: 80%;
   }
 
+  .md\:flex-1 {
+    flex: 1 1 0%;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:gap-y-12 {
+    row-gap: 3rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
@@ -860,6 +935,10 @@ video {
     align-items: center;
   }
 
+  .xl\:justify-center {
+    justify-content: center;
+  }
+
   .xl\:gap-x-0 {
     -moz-column-gap: 0px;
          column-gap: 0px;
@@ -893,8 +972,8 @@ video {
     line-height: 2.5rem;
   }
 
-  .xl\:text-5xl {
-    font-size: 3rem;
+  .xl\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 
